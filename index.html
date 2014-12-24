@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='store'>
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  </head>
+  <body>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <p>{{"Hello"+" you"}}</p>
+    <div ng-controller='storeController as store'>
+      <div ng-repeat="product in store.products">
+        <h1>Product Name: {{product.name}}</h1>
+        <h2>Product Price: {{product.price | currency}}</h2>
+        <p>Description: {{product.description}}</p>
+      <div>
+    </div>
+  </body>
+</html>
+<!-- http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1 -->
