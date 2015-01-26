@@ -8,4 +8,31 @@
       return this.tab === checkTab;
     };
   });
+
+  app.controller('SelectController', function(){
+    this.test = "Mohsin";
+    var select_options = [
+    {
+      value: "Person Check",
+      text: "Person Check"
+    },
+    {
+      value: "Busines Check",
+      text: "Busines Check"
+    }
+  ];
+  });
+
+  var select_options = [
+    {
+      value: "Person Check",
+      text: "Person Check"
+    },
+    {
+      value: "Busines Check",
+      text: "Busines Check"
+    }
+  ];
+
+
 })();

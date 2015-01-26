@@ -22,7 +22,11 @@
         </li>
       </ul>
     </section>
-      
+    
+    <section ng-controller="SelectController as SelectCtrl">
+      <h3>{{SelectCtrl.test}}</h3>
+      <select data-ng-model='selected' data-ng-options='t.value as t.label for t in SelectCtrl.select_options'></select>
+    </section>
 
   </body>
 </html>
