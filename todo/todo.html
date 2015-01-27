@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app='todoapp'>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css" />
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script src="todo_2.js"></script>    
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <section ng-controller="TodoController as TodoCtrl">
+      <ul>
+        <li ng-repeat='todo in TodoCtrl.todos'>
+          <input type="checkbox" ng-model='todo.done'>
+          <span class='done-{{todo.done}}'>{{todo.text}}</span>
+        </li>
+      </ul>
+      <!-- *******************  -->
+
+      <select>
+        <option ng-repeat='country in TodoCtrl.countries' value='{{country.id}}'>{{country.text}}</option>
+      </select>
+    </section>
+  </body>
+</html>
