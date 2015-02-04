@@ -8,6 +8,7 @@
   </head>
   <body>
     <section ng-controller="TodoController as TodoCtrl">
+      {{TodoCtrl.remaining()}} of {{TodoCtrl.todos.length}} remaining.
       <ul>
         <li ng-repeat='todo in TodoCtrl.todos'>
           <input type="checkbox" ng-model='todo.done'>
@@ -19,6 +20,16 @@
       <select>
         <option ng-repeat='country in TodoCtrl.countries' value='{{country.id}}'>{{country.text}}</option>
       </select>
+
+      <form name="todo_list" ng-submit='TodoCtrl.addTodo()'>
+        <input type='text' ng-model='TodoCtrl.todoText' />
+        <input type='submit' value='Add' />
+      </form>
+
+      <form name="country_list" ng-submit="TodoCtrl.addCountry()">
+        <input type="text" ng-model="TodoCtrl.countryText" />
+        <input type="submit" value="Add" />
+      </form>
     </section>
   </body>
 </html>
