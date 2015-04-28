@@ -9,11 +9,13 @@
   </head>
   <body>
     <div ng-controller="StoreController as store">
-      <h3>
-        
-        <em>Product Name: </em>{{store.product.name}}<br />
-        <em>Product Price: </em>${{store.product.price}}<br />
-      </h3>
+      <div ng-repeat='product in store.products'>
+        <h3 ng-hide='product.soldOut'>        
+          <em>Product Name: </em>{{product.name}}<br />
+          <em>Product Price: </em>${{product.price}}<br />
+        </h3>
+      </div>
     </div>
   </body>
 </html>
+<!-- http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/3/video/1 -->
