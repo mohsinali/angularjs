@@ -1,8 +1,38 @@
 (function() {
   var app = angular.module('gemStore', []);
 
-  app.controller('StoreController', function(){
+  app.controller('StoreController', function() {
     this.products = gems;
+  });
+
+  app.controller("TabController", function() {
+    this.tab = 1;
+
+    this.isSet = function(checkTab) {
+      return this.tab === checkTab;
+    };
+
+    this.setTab = function(setTab) {
+      this.tab = setTab;
+    };
+  });
+
+  app.controller('GalleryController', function(){
+    this.current = 0;
+
+    this.setCurrent = function(imageNumber){
+      this.current = imageNumber || 0;
+    };
+  });
+
+  app.controller("ReviewController", function(){
+
+    this.review = {};
+
+    this.addReview = function(product){
+      product.reviews.push(this.review);
+      this.review = {};
+    };
   });
 
   var gems = [{
@@ -40,7 +70,7 @@
       images: [
         "images/gem-01.gif",
         "images/gem-03.gif",
-        "images/gem-04.gif"
+        "images/gem-04.gif",
       ],
       reviews: [{
         stars: 3,
@@ -64,7 +94,7 @@
       images: [
         "images/gem-06.gif",
         "images/gem-07.gif",
-        "images/gem-10.gif"
+        "images/gem-08.gif"
       ],
       reviews: [{
         stars: 1,
@@ -84,14 +114,3 @@
       }]
     }];
 })();
-
-
-
-// Some services code
-/*
-app.controller('productsController', ['$http', function($http){
-  $http.get('/store-products.html').success(function(data){
-
-  });
-}]);
-*/
